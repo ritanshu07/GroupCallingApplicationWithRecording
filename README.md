@@ -1,7 +1,7 @@
 ---
 page_type: sample
 languages:
-- javascript
+- typescript
 - nodejs
 - csharp
 products:
@@ -18,8 +18,6 @@ The client-side application is a React based user interface which uses Redux for
 Powering this front-end is a C# web application powered by ASP.NET Core to connect this application with Azure Communication Services.
 
 A separate branch with Teams Interop capabilities is [available](https://github.com/Azure-Samples/communication-services-web-calling-hero/blob/teams-interop/README.md). Teams Interop is in public preview and uses beta SDKs that are not meant for production use. Please use the main branch sample for any production scenarios.
-
-Additional documentation for this sample can be found on [Microsoft Docs](https://docs.microsoft.com/azure/communication-services/samples/calling-hero-sample).
 
 ![Homepage](./Media/homepage-sample-calling.png)
 
@@ -148,8 +146,6 @@ Use the  recording id received in response of  `StartRecordingAsync`.
 
 	Clean/rebuild the C# solution
 
-2. The app shows an "Unsupported browser" screen but I am on a [supported browser](https://docs.microsoft.com/en-us/azure/communication-services/concepts/voice-video-calling/calling-sdk-features#calling-client-library-browser-support).
-
 	If your app is being served over a hostname other then localhost, you must serve traffic over https and not http.
 
 ## Publish to Azure
@@ -165,7 +161,7 @@ Use the  recording id received in response of  `StartRecordingAsync`.
 	-  `BlobStorageConnectionString` as the key of connection string of the blob storage where call recoding data is saved.
 	-  `ContainerName` as the key of container name of the blob storage used for saving call recording data.
 
-**Note**: While you may use http://localhost for local testing, the sample when deployed will only work when served over https. The SDK [does not support http](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/calling-sdk-features#user-webrtc-over-https).
+**Note**: While you may use http://localhost for local testing, the sample when deployed will only work when served over https.
 
 ## Building off of the sample
 
@@ -176,9 +172,6 @@ If you would like to build off of this sample to add calling capabilities to you
   - By default, the backend disables Cross-Origin Resource Sharing (CORS). If you'd like to serve the backend APIs from a different domain than the static content, you must enable (restricted) CORS. This can be done by configuring a middleware in the backend in ./Calling/Startup.cs, or by configuring your server framework to modify HTTP response headers.
 
 ## Additional Reading
-
-- [Azure Communication Calling SDK](https://docs.microsoft.com/azure/communication-services/concepts/voice-video-calling/calling-sdk-features) - To learn more about the calling web sdk
 - [Redux](https://redux.js.org/) - Client-side state management
 - [FluentUI](https://developer.microsoft.com/en-us/fluentui#/) - Microsoft powered UI library
 - [React](https://reactjs.org/) - Library for building user interfaces
-- [ASP.NET Core](https://docs.microsoft.com/aspnet/core/introduction-to-aspnet-core?view=aspnetcore-3.1) - Framework for building web applications
